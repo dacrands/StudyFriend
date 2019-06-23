@@ -11,14 +11,14 @@ namespace StudyFriend.Pages.Questions
         public SelectList TopicNameSL { get; set; }
 
         public void PopulateTopicsDropDownList(StudyFriendContext _context,
-            object selectedDepartment = null)
+            object selectedTopic = null)
         {
             var topicsQuery = from t in _context.Topic
                               orderby t.Name
                               select t;
 
             TopicNameSL = new SelectList(topicsQuery.AsNoTracking(),
-                "ID", "Name", selectedDepartment);
+                "ID", "Name", selectedTopic);
         }
     }
 }
