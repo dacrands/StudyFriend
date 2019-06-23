@@ -21,10 +21,10 @@
                 </select>
                 <span asp-validation-for="Answer.QuestionID" class="text-danger"></span>    
 
-            </div>
+            </div>            
             <div class="form-group">
                 <label asp-for="Answer.Body" class="control-label"></label>
-                <input asp-for="Answer.Body" class="form-control" />
+                <textarea asp-for="Answer.Body" class="form-control" ></textarea>
                 <span asp-validation-for="Answer.Body" class="text-danger"></span>
             </div>
             <div class="form-group">
