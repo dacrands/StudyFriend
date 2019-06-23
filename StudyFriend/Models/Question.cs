@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace StudyFriend.Models
 {
     public class Question
     {
-        public int ID { get; set; }
+        public int QuestionID { get; set; }
+        public int TopicID { get; set; }
         public string Body { get; set; }
+        public Topic Topic { get; set; }
+        public ICollection<Answer> Answers { get; set; }
     }
 }
