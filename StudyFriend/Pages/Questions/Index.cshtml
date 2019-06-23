@@ -2,7 +2,7 @@
 @model StudyFriend.Pages.Questions.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Questions";
 }
 
 <h2>Index</h2>
@@ -27,7 +27,9 @@
                 @Html.DisplayFor(modelItem => item.Body)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Topic.Name)
+                <a asp-page="../Topics/Details" asp-route-id="@item.Topic.ID">
+                    @Html.DisplayFor(modelItem => item.Topic.Name)
+                </a>
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.QuestionID">Edit</a> |
