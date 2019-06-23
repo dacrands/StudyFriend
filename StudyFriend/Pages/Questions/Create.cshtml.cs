@@ -9,7 +9,7 @@ using StudyFriend.Models;
 
 namespace StudyFriend.Pages.Questions
 {
-    public class CreateModel : PageModel
+    public class CreateModel : TopicNamePageModel
     {
         private readonly StudyFriend.Models.StudyFriendContext _context;
 
@@ -20,6 +20,7 @@ namespace StudyFriend.Pages.Questions
 
         public IActionResult OnGet()
         {
+            PopulateTopicsDropDownList(_context);
             return Page();
         }
 
@@ -33,10 +34,20 @@ namespace StudyFriend.Pages.Questions
                 return Page();
             }
 
-            _context.Question.Add(Question);
-            await _context.SaveChangesAsync();
+            var emptyQuestion = new Question();
 
-            return RedirectToPage("./Index");
+            if (await TryUpdateModelAsync<Question>(
+                emptyQuestion,
+                "question",
+                s => s.QuestionID, s => s.TopicID, s => s.Body, s => s.Topic))
+            {
+                _context.Question.Add(emptyQuestion);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            }
+
+            PopulateTopicsDropDownList(_context, emptyQuestion.QuestionID);
+            return Page();
         }
     }
 }

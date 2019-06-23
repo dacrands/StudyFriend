@@ -22,7 +22,10 @@ namespace StudyFriend.Pages.Questions
 
         public async Task OnGetAsync()
         {
-            Question = await _context.Question.ToListAsync();
+            Question = await _context.Question
+                .Include(q => q.Topic)
+                .AsNoTracking()
+                .ToListAsync();
         }
     }
 }
