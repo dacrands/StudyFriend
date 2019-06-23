@@ -10,7 +10,7 @@ using StudyFriend.Models;
 
 namespace StudyFriend.Pages.Questions
 {
-    public class EditModel : PageModel
+    public class EditModel : TopicNamePageModel
     {
         private readonly StudyFriend.Models.StudyFriendContext _context;
 
@@ -29,41 +29,40 @@ namespace StudyFriend.Pages.Questions
                 return NotFound();
             }
 
-            Question = await _context.Question.FirstOrDefaultAsync(m => m.QuestionID == id);
+            Question = await _context.Question
+                .Include(q => q.Topic)
+                .FirstOrDefaultAsync(m => m.QuestionID == id);
 
             if (Question == null)
             {
                 return NotFound();
             }
+
+            // Select current QuestionID
+            PopulateTopicsDropDownList(_context, Question.TopicID);
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Attach(Question).State = EntityState.Modified;
+            var questionToUpdate = await _context.Question.FindAsync(id);
 
-            try
+            if (await TryUpdateModelAsync<Question>(
+                questionToUpdate,
+                "question",
+                q => q.Body, q => q.TopicID))
             {
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!QuestionExists(Question.QuestionID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return RedirectToPage("./Index");
             }
 
-            return RedirectToPage("./Index");
+            PopulateTopicsDropDownList(_context, questionToUpdate.TopicID);
+            return Page();
         }
 
         private bool QuestionExists(int id)
