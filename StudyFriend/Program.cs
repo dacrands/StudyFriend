@@ -21,7 +21,7 @@ namespace StudyFriend
                 try
                 {
                     var context = services.GetRequiredService<StudyFriendContext>();
-                    context.Database.EnsureCreated();
+                    DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {
