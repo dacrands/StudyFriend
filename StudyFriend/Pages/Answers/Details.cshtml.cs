@@ -28,7 +28,8 @@ namespace StudyFriend.Pages.Answers
             }
 
             Answer = await _context.Answer
-                .Include(a => a.Question).FirstOrDefaultAsync(m => m.AnswerID == id);
+                .Include(a => a.Question)
+                .FirstOrDefaultAsync(m => m.AnswerID == id);
 
             if (Answer == null)
             {
