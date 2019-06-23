@@ -2,35 +2,32 @@
 @model StudyFriend.Pages.Topics.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Topics";
 }
 
-<h2>Index</h2>
+<div class="jumbotron text-center">
+    <h1>Topics</h1>    
+    <hr />
+    <a class="btn btn-primary" asp-page="Create">Add a new topic</a>
+</div>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Topic[0].Name)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Topic) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class=" row list-group">
+    @foreach (var item in Model.Topic)
+    {
+        <div class="col-md-4">
+            <div class="thumbnail text-center">
+                <h3>
+                    <a asp-page="./Details" asp-route-id="@item.ID">
+                        @Html.DisplayFor(modelItem => item.Name)
+                     </a>
+                </h3>
+                <hr />
+                <div>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
