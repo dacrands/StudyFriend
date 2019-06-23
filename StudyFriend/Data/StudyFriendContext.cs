@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace StudyFriend.Models
 {
@@ -14,5 +10,7 @@ namespace StudyFriend.Models
         }
 
         public DbSet<StudyFriend.Models.Question> Question { get; set; }
+        public DbSet<StudyFriend.Models.Answer> Answer { get; set; }
+        public DbSet<StudyFriend.Models.Topic> Topic { get; set; }
     }
 }
