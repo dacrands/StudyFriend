@@ -2,12 +2,14 @@
 @model StudyFriend.Pages.Answers.EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Answer";
 }
 
-<h2>Edit</h2>
-
-<h4>Answer</h4>
+<h1>
+    <small>Edit your answer to...</small>
+    <br />
+    @Model.Answer.Question.Body
+</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,13 +17,8 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Answer.AnswerID" />
             <div class="form-group">
-                <label asp-for="Answer.QuestionID" class="control-label"></label>
-                <select asp-for="Answer.QuestionID" class="form-control" asp-items="ViewBag.QuestionID"></select>
-                <span asp-validation-for="Answer.QuestionID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Answer.Body" class="control-label"></label>
-                <input asp-for="Answer.Body" class="form-control" />
+                <textarea rows="5" asp-for="Answer.Body" class="form-control"></textarea>
                 <span asp-validation-for="Answer.Body" class="text-danger"></span>
             </div>
             <div class="form-group">
