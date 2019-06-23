@@ -27,9 +27,10 @@ namespace StudyFriend.Pages.Questions
                 return NotFound();
             }
 
-            Question = await _context.Question
-                .AsNoTracking()
+            Question = await _context.Question                
                 .Include(q => q.Topic)
+                .Include(q => q.Answers)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.QuestionID == id);
 
             if (Question == null)

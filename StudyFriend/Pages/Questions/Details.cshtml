@@ -23,6 +23,17 @@
         <dd>
             @Html.DisplayFor(model => model.Question.Body)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Question.Answers)
+        </dt>
+        <dd>
+            @{ 
+                foreach (var answer in Model.Question.Answers)
+                {
+                    @answer.Body <br>
+                }
+            }
+        </dd>
     </dl>
 </div>
 <div>
