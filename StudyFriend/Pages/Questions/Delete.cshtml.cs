@@ -28,7 +28,7 @@ namespace StudyFriend.Pages.Questions
                 return NotFound();
             }
 
-            Question = await _context.Question.FirstOrDefaultAsync(m => m.ID == id);
+            Question = await _context.Question.FirstOrDefaultAsync(m => m.QuestionID == id);
 
             if (Question == null)
             {

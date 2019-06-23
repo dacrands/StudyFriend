@@ -29,7 +29,7 @@ namespace StudyFriend.Pages.Questions
                 return NotFound();
             }
 
-            Question = await _context.Question.FirstOrDefaultAsync(m => m.ID == id);
+            Question = await _context.Question.FirstOrDefaultAsync(m => m.QuestionID == id);
 
             if (Question == null)
             {
@@ -53,7 +53,7 @@ namespace StudyFriend.Pages.Questions
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!QuestionExists(Question.ID))
+                if (!QuestionExists(Question.QuestionID))
                 {
                     return NotFound();
                 }
@@ -68,7 +68,7 @@ namespace StudyFriend.Pages.Questions
 
         private bool QuestionExists(int id)
         {
-            return _context.Question.Any(e => e.ID == id);
+            return _context.Question.Any(e => e.QuestionID == id);
         }
     }
 }
