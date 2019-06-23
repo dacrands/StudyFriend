@@ -18,6 +18,12 @@
         <dd>
             @Html.DisplayFor(model => model.Question.Body)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Question.Topic)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Question.Topic.Name)
+        </dd>
     </dl>
     
     <form method="post">

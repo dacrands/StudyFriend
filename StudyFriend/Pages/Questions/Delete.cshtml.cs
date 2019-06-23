@@ -28,7 +28,10 @@ namespace StudyFriend.Pages.Questions
                 return NotFound();
             }
 
-            Question = await _context.Question.FirstOrDefaultAsync(m => m.QuestionID == id);
+            Question = await _context.Question
+                .AsNoTracking()
+                .Include(q => q.Topic)
+                .FirstOrDefaultAsync(m => m.QuestionID == id);
 
             if (Question == null)
             {
@@ -44,7 +47,9 @@ namespace StudyFriend.Pages.Questions
                 return NotFound();
             }
 
-            Question = await _context.Question.FindAsync(id);
+            Question = await _context.Question
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.QuestionID == id);
 
             if (Question != null)
             {
