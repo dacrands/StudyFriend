@@ -10,7 +10,7 @@ using StudyFriend.Models;
 
 namespace StudyFriend.Pages.Answers
 {
-    public class EditModel : PageModel
+    public class EditModel : QuestionBodyPageModel
     {
         private readonly StudyFriend.Models.StudyFriendContext _context;
 
@@ -36,41 +36,31 @@ namespace StudyFriend.Pages.Answers
             {
                 return NotFound();
             }
-           ViewData["QuestionID"] = new SelectList(_context.Question, "QuestionID", "QuestionID");
+
+            PopulateQuestionsDropDownList(_context, Answer.QuestionID);
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Attach(Answer).State = EntityState.Modified;
+            var answerToUpdate = await _context.Answer.FindAsync(id);
 
-            try
+            if (await TryUpdateModelAsync<Answer>(
+                answerToUpdate,
+                "answer",
+                a => a.Body, a => a.QuestionID))
             {
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!AnswerExists(Answer.AnswerID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return RedirectToPage("../Questions/Details", new { id = answerToUpdate.QuestionID });
             }
 
-            return RedirectToPage("./Index");
-        }
-
-        private bool AnswerExists(int id)
-        {
-            return _context.Answer.Any(e => e.AnswerID == id);
-        }
+            PopulateQuestionsDropDownList(_context, answerToUpdate.QuestionID);
+            return Page();
+        }        
     }
 }
