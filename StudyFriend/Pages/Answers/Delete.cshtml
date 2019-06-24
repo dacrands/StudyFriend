@@ -29,6 +29,6 @@
     <form method="post">
         <input type="hidden" asp-for="Answer.AnswerID" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-page="./Index">Back to List</a>
+        <a asp-page="../Questions/Details" asp-route-id="@Model.Answer.QuestionID">Back to Question</a>
     </form>
 </div>
