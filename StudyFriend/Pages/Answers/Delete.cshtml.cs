@@ -53,7 +53,7 @@ namespace StudyFriend.Pages.Answers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Questions/Details", new { id = Answer.QuestionID });
         }
     }
 }
