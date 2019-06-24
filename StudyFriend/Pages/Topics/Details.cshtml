@@ -5,21 +5,25 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
-
+<h2>@Html.DisplayFor(model => model.Topic.Name) Questions</h2>
+<a asp-page="../Questions/Create">Add New Question</a> 
+<hr />
 <div>
-    <h4>Topic</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Topic.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Topic.Name)
-        </dd>
-    </dl>
+    <div class="list-group">
+        @{
+            foreach (var question in Model.Topic.Questions)
+            {
+
+                <a class="list-group-item" asp-page="../Questions/Details"
+                   asp-route-id="@question.QuestionID">
+                    @question.Body
+                </a>
+
+            }
+        }
+    </div>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Topic.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+
+    <a asp-page="./Index">Back to Topics</a> | <a asp-page="./Edit" asp-route-id="@Model.Topic.ID">Edit Topic Name</a>
 </div>
