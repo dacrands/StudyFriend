@@ -18,8 +18,14 @@ namespace StudyFriend.Pages.Answers
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int questionId)
+
         {
+            if (questionId > 0)
+            {
+                PopulateQuestionsDropDownList(_context, null, questionId);
+                return Page();
+            }
             PopulateQuestionsDropDownList(_context);
             return Page();
         }
