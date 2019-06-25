@@ -12,7 +12,7 @@ namespace StudyFriend.Pages
 
         public void OnGet()
         {
-            Message = "Your application description page.";
+            Message = "An app to help you study";
         }
     }
 }
