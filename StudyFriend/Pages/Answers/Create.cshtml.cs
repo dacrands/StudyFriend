@@ -18,10 +18,10 @@ namespace StudyFriend.Pages.Answers
             _context = context;
         }
 
-        public IActionResult OnGet(int questionId)
+        public IActionResult OnGet(int? questionId)
 
         {
-            if (questionId > 0)
+            if (questionId != null)
             {
                 PopulateQuestionsDropDownList(_context, null, questionId);
                 return Page();
@@ -49,7 +49,7 @@ namespace StudyFriend.Pages.Answers
             {
                 _context.Answer.Add(emptyAnswer);
                 await _context.SaveChangesAsync();                
-                return RedirectToPage("./Index");
+                return RedirectToPage("../Questions/Details", new { id = emptyAnswer.QuestionID });
             }
 
             PopulateQuestionsDropDownList(_context, emptyAnswer.AnswerID);
