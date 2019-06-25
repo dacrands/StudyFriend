@@ -5,11 +5,11 @@
     ViewData["Title"] = "Details";
 }
 
-    <h1>
-        <small> @Html.DisplayFor(model => model.Question.Topic.Name)</small>
+    <h3>
+        @Html.DisplayFor(model => model.Question.Body)
         <br />
-        @Html.DisplayFor(model => model.Question.Body)        
-    </h1>
+        <small> Topic: @Html.DisplayFor(model => model.Question.Topic.Name)</small>
+    </h3>
         <a  asp-page="../Answers/Create" asp-route-questionId="@Model.Question.QuestionID">Add an Answer</a> |
         <a asp-page="./Edit" asp-route-id="@Model.Question.QuestionID">Edit this Question</a>
 
@@ -32,8 +32,6 @@
     </div>
 </div>
 <div>
-    <a asp-page="../Topics/Details" asp-route-id="@Model.Question.TopicID">More on @Model.Question.Topic.Name</a>
-    <br />
-    <a asp-page="./Index">Questions Index</a>
+    <a asp-page="../Topics/Details" asp-route-id="@Model.Question.TopicID">Back to @Model.Question.Topic.Name</a>
 
 </div>
