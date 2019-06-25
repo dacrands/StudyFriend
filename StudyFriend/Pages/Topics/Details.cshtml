@@ -6,7 +6,7 @@
 }
 
 <h2>@Html.DisplayFor(model => model.Topic.Name) Questions</h2>
-<a asp-page="../Questions/Create">Add New Question</a> 
+<a asp-page="../Questions/Create" asp-route-topicId="@Model.Topic.ID">Add New Question</a> 
 <hr />
 <div>
     <div class="list-group">
