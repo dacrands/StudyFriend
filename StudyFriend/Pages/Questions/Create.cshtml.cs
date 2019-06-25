@@ -43,7 +43,7 @@ namespace StudyFriend.Pages.Questions
             {
                 _context.Question.Add(emptyQuestion);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("./Index");
+                return RedirectToPage("../Questions/Details", new { id = emptyQuestion.QuestionID });
             }
 
             PopulateTopicsDropDownList(_context, emptyQuestion.QuestionID);
