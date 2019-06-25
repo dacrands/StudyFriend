@@ -10,7 +10,7 @@
         <br />
         @Html.DisplayFor(model => model.Question.Body)        
     </h1>
-        <a asp-page="../Answers/Create">Add an Answer</a> |
+        <a  asp-page="../Answers/Create" asp-route-questionId="@Model.Question.QuestionID">Add an Answer</a> |
         <a asp-page="./Edit" asp-route-id="@Model.Question.QuestionID">Edit this Question</a>
 
 <hr />
