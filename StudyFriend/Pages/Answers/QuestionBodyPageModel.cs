@@ -11,18 +11,11 @@ namespace StudyFriend.Pages.Answers
         public SelectList QuestionBodySL { get; set; }
 
         public void PopulateQuestionsDropDownList(StudyFriendContext _context,
-            object selectedQuestion = null, int? questionID = 0)
+            object selectedQuestion = null)
         {
             var questionsQuery = from q in _context.Question
                                 orderby q.Body
                                 select q;
-            
-            if (questionID != 0)
-            {
-                QuestionBodySL = new SelectList(questionsQuery.AsNoTracking(),
-                "QuestionID", "Body", questionID);
-                return;
-            }
 
             QuestionBodySL = new SelectList(questionsQuery.AsNoTracking(),
                 "QuestionID", "Body", selectedQuestion);

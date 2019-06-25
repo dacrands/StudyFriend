@@ -23,7 +23,7 @@ namespace StudyFriend.Pages.Answers
         {
             if (questionId != null)
             {
-                PopulateQuestionsDropDownList(_context, null, questionId);
+                PopulateQuestionsDropDownList(_context, questionId);
                 return Page();
             }
             PopulateQuestionsDropDownList(_context);
