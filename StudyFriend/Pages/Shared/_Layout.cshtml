@@ -29,12 +29,13 @@
                 <a asp-page="/Index" class="navbar-brand">Study Friend</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">                    
+                <ul class="nav navbar-nav">
                     <li><a asp-page="/Topics/Index">Topics</a></li>
-                    <li><a asp-page="/Questions/Index">Questions</a></li>                    
+                    <li><a asp-page="/Questions/Index">Questions</a></li>
                     <li><a asp-page="/About">About</a></li>
                     <li><a asp-page="/Contact">Contact</a></li>
                 </ul>
+                    <partial name="_LoginPartial" />
             </div>
         </div>
     </nav>

@@ -34,6 +34,10 @@ namespace StudyFriend
             });
 
 
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddRoles<Microsoft.AspNetCore.Identity.IdentityRole>()
+                .AddEntityFrameworkStores<StudyFriendContext>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<StudyFriendContext>(options =>
@@ -53,10 +57,10 @@ namespace StudyFriend
                 app.UseHsts();
             }
 
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
             app.UseMvc();
         }
     }
