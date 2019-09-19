@@ -11,7 +11,7 @@ namespace StudyFriend.Models
             context.Database.EnsureCreated();
             // If any Questions exist, don't reseed the DB
 
-            if (context.Question.Any())
+            if (true)
             {
                 return;
             }
