@@ -12,9 +12,9 @@ namespace StudyFriend.Pages.Questions
 {
     public class EditModel : TopicNamePageModel
     {
-        private readonly StudyFriend.Models.StudyFriendContext _context;
+        private readonly StudyFriendContext _context;
 
-        public EditModel(StudyFriend.Models.StudyFriendContext context)
+        public EditModel(StudyFriendContext context)
         {
             _context = context;
         }
@@ -52,7 +52,7 @@ namespace StudyFriend.Pages.Questions
 
             var questionToUpdate = await _context.Question.FindAsync(id);
 
-            if (await TryUpdateModelAsync<Question>(
+            if (await TryUpdateModelAsync(
                 questionToUpdate,
                 "question",
                 q => q.Body, q => q.TopicID))

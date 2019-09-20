@@ -11,9 +11,9 @@ namespace StudyFriend.Pages.Questions
 {
     public class CreateModel : TopicNamePageModel
     {
-        private readonly StudyFriend.Models.StudyFriendContext _context;
+        private readonly StudyFriendContext _context;
 
-        public CreateModel(StudyFriend.Models.StudyFriendContext context)
+        public CreateModel(StudyFriendContext context)
         {
             _context = context;
         }
@@ -41,7 +41,7 @@ namespace StudyFriend.Pages.Questions
 
             var emptyQuestion = new Question();
 
-            if (await TryUpdateModelAsync<Question>(
+            if (await TryUpdateModelAsync(
                 emptyQuestion,
                 "question",
                 s => s.QuestionID, s => s.TopicID, s => s.Body, s => s.Topic))

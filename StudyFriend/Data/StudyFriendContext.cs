@@ -10,9 +10,9 @@ namespace StudyFriend.Models
         {
         }
 
-        public DbSet<StudyFriend.Models.ApplicationUser> ApplicationUser { get; set; }
-        public DbSet<StudyFriend.Models.Question> Question { get; set; }
-        public DbSet<StudyFriend.Models.Answer> Answer { get; set; }
-        public DbSet<StudyFriend.Models.Topic> Topic { get; set; }
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+        public DbSet<Question> Question { get; set; }
+        public DbSet<Answer> Answer { get; set; }
+        public DbSet<Topic> Topic { get; set; }
     }
 }

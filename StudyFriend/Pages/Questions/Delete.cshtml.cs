@@ -11,9 +11,9 @@ namespace StudyFriend.Pages.Questions
 {
     public class DeleteModel : PageModel
     {
-        private readonly StudyFriend.Models.StudyFriendContext _context;
+        private readonly StudyFriendContext _context;
 
-        public DeleteModel(StudyFriend.Models.StudyFriendContext context)
+        public DeleteModel(StudyFriendContext context)
         {
             _context = context;
         }

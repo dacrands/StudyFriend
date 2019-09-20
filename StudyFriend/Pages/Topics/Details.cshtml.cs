@@ -11,9 +11,9 @@ namespace StudyFriend.Pages.Topics
 {
     public class DetailsModel : PageModel
     {
-        private readonly StudyFriend.Models.StudyFriendContext _context;
+        private readonly StudyFriendContext _context;
 
-        public DetailsModel(StudyFriend.Models.StudyFriendContext context)
+        public DetailsModel(StudyFriendContext context)
         {
             _context = context;
         }

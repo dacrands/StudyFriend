@@ -12,9 +12,9 @@ namespace StudyFriend.Pages.Topics
 {
     public class EditModel : PageModel
     {
-        private readonly StudyFriend.Models.StudyFriendContext _context;
+        private readonly StudyFriendContext _context;
 
-        public EditModel(StudyFriend.Models.StudyFriendContext context)
+        public EditModel(StudyFriendContext context)
         {
             _context = context;
         }

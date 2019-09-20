@@ -11,9 +11,9 @@ namespace StudyFriend.Pages.Answers
 {
     public class CreateModel : QuestionBodyPageModel
     {
-        private readonly StudyFriend.Models.StudyFriendContext _context;
+        private readonly StudyFriendContext _context;
 
-        public CreateModel(StudyFriend.Models.StudyFriendContext context)
+        public CreateModel(StudyFriendContext context)
         {
             _context = context;
         }
@@ -42,7 +42,7 @@ namespace StudyFriend.Pages.Answers
 
             var emptyAnswer = new Answer();
 
-            if (await TryUpdateModelAsync<Answer>(
+            if (await TryUpdateModelAsync(
                 emptyAnswer,
                 "answer",
                 s => s.AnswerID, s => s.QuestionID, s => s.Body, s => s.Question))

@@ -11,9 +11,9 @@ namespace StudyFriend.Pages.Questions
 {
     public class IndexModel : PageModel
     {
-        private readonly StudyFriend.Models.StudyFriendContext _context;
+        private readonly StudyFriendContext _context;
 
-        public IndexModel(StudyFriend.Models.StudyFriendContext context)
+        public IndexModel(StudyFriendContext context)
         {
             _context = context;
         }

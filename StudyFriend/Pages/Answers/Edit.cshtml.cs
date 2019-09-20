@@ -12,9 +12,9 @@ namespace StudyFriend.Pages.Answers
 {
     public class EditModel : QuestionBodyPageModel
     {
-        private readonly StudyFriend.Models.StudyFriendContext _context;
+        private readonly StudyFriendContext _context;
 
-        public EditModel(StudyFriend.Models.StudyFriendContext context)
+        public EditModel(StudyFriendContext context)
         {
             _context = context;
         }
@@ -50,7 +50,7 @@ namespace StudyFriend.Pages.Answers
 
             var answerToUpdate = await _context.Answer.FindAsync(id);
 
-            if (await TryUpdateModelAsync<Answer>(
+            if (await TryUpdateModelAsync(
                 answerToUpdate,
                 "answer",
                 a => a.Body, a => a.QuestionID))
