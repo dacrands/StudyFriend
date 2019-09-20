@@ -38,7 +38,14 @@ namespace StudyFriend
                 .AddRoles<Microsoft.AspNetCore.Identity.IdentityRole>()
                 .AddEntityFrameworkStores<StudyFriendContext>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+                .AddRazorPagesOptions(options =>
+                {
+                    options.Conventions.AuthorizeFolder("/Topics");
+                    options.Conventions.AuthorizeFolder("/Questions");
+                    options.Conventions.AuthorizeFolder("/Answers");
+                }
+                ).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<StudyFriendContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("StudyFriendContext")));
