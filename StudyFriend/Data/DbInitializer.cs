@@ -1,8 +1,4 @@
-﻿using StudyFriend.Models;
-using System;
-using System.Linq;
-
-namespace StudyFriend.Models
+﻿namespace StudyFriend.Models
 {
     public static class DbInitializer
     {
