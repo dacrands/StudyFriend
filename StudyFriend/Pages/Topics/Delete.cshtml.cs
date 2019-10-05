@@ -25,7 +25,7 @@ namespace StudyFriend.Pages.Topics
                 return NotFound();
             }
 
-            Topic = await _context.Topic.FirstOrDefaultAsync(m => m.ID == id);
+            Topic = await _context.Topic.FirstOrDefaultAsync(m => m.TopicID == id);
 
             if (Topic == null)
             {

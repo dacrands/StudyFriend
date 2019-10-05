@@ -27,7 +27,7 @@ namespace StudyFriend.Pages.Topics
             Topic = await _context.Topic
                 .Include(t => t.Questions)
                 .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.TopicID == id);
 
             if (Topic == null)
             {

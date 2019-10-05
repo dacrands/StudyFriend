@@ -26,7 +26,7 @@ namespace StudyFriend.Pages.Topics
                 return NotFound();
             }
 
-            Topic = await _context.Topic.FirstOrDefaultAsync(m => m.ID == id);
+            Topic = await _context.Topic.FirstOrDefaultAsync(m => m.TopicID == id);
 
             if (Topic == null)
             {
@@ -50,7 +50,7 @@ namespace StudyFriend.Pages.Topics
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TopicExists(Topic.ID))
+                if (!TopicExists(Topic.TopicID))
                 {
                     return NotFound();
                 }
@@ -65,7 +65,7 @@ namespace StudyFriend.Pages.Topics
 
         private bool TopicExists(int id)
         {
-            return _context.Topic.Any(e => e.ID == id);
+            return _context.Topic.Any(e => e.TopicID == id);
         }
     }
 }

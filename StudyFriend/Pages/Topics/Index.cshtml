@@ -18,14 +18,14 @@
         <div class="col-md-4">
             <div class="thumbnail text-center">
                 <h3>
-                    <a asp-page="./Details" asp-route-id="@item.ID">
+                    <a asp-page="./Details" asp-route-id="@item.TopicID">
                         @Html.DisplayFor(modelItem => item.Name)
                      </a>
                 </h3>
                 <hr />
                 <div>
-                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.TopicID">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.TopicID">Delete</a>
                 </div>
             </div>
         </div>

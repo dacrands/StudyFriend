@@ -14,7 +14,7 @@ namespace StudyFriend.Pages.Questions
         }
 
         public IActionResult OnGet(int? topicId)
-        {
+        {            
             if (topicId != null)
             {
                 PopulateTopicsDropDownList(_context, topicId);
