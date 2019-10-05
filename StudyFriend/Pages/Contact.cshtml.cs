@@ -8,7 +8,7 @@ namespace StudyFriend.Pages
 
         public void OnGet()
         {
-            Message = "Your contact page.";
+            Message = "Say hello to David!";
         }
     }
 }
