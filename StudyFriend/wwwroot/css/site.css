@@ -23,6 +23,38 @@ body {
     width: 100%;
 }
 
+.about-svg {
+    max-width: 350px;
+    align-self: center;
+}
+
+/* Bootstrap style spacing helpers*/
+.mt-lg {    
+    margin-top: 80px;
+}
+
+.mt-md {
+    margin-top: 30px;
+}
+
+
+.blue-gradient {
+    background: #56CCF2; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: aliceblue;
+}
+
+
+/*Flex Helper*/
+.flex-center {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+
 /* QR code generator */
 #qrCode {
     margin: 15px;
