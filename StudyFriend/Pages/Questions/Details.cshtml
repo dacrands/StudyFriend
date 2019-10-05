@@ -6,9 +6,9 @@
 }
 
     <h3>
-        @Html.DisplayFor(model => model.Question.Body)
+        <small>@Html.DisplayFor(model => model.Question.Topic.Name)</small>
         <br />
-        <small> Topic: @Html.DisplayFor(model => model.Question.Topic.Name)</small>
+        @Html.DisplayFor(model => model.Question.Body)
     </h3>
         <a  asp-page="../Answers/Create" asp-route-questionId="@Model.Question.QuestionID">Add an Answer</a> |
         <a asp-page="./Edit" asp-route-id="@Model.Question.QuestionID">Edit this Question</a>
