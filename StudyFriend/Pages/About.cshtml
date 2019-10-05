@@ -1,15 +1,18 @@
 ﻿@page
 @model AboutModel
 @{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "About Study Friend";
 }
 <h2>@ViewData["Title"]</h2>
 <h3>@Model.Message</h3>
 
 <hr />
 
-<div class="row">
-    <div class="col-md-6">
+<div class="row">    
+    <div class="col-sm-7 flex-center">
+        <img src="~/images/exams.svg" alt="ASP.NET" class="img-responsive about-svg" />        
+    </div>
+    <div class="col-sm-5">
         <h4>How it works</h4>
         <p>
             A very effective studying method is creating questions based on the material you just learned,
@@ -17,24 +20,32 @@
             write questions and the answers to those questions.
         </p>
     </div>
-    <div class="col-md-6">
+</div>
+<div class="row mt-lg">
+    <div class="col-sm-7 flex-center">
+        <img src="~/images/notes.svg" alt="ASP.NET" class="img-responsive about-svg" />
+    </div>
+    <div class="col-sm-5">
         <h4>More than one answer</h4>
         <p>
-            Maybe you want to explain your answer with an analogy. 
-            Maybe you want to learn a definition verbatim. 
-            Maybe you want to create a few answers until you narrow down the best one.           
+            Maybe you want to explain your answer with an analogy.
+            Maybe you want to learn a definition verbatim.
+            Maybe you want to create a few answers until you narrow down the best one.
             Either way, add as many, or as little, answers as you'd like.
         </p>
-    </div>
+    </div>  
 </div>
-<div class="row">
-    <div class="col-md-6">        
+<div class="row mt-lg">
+    <div class="col-sm-7 flex-center">
+        <img src="~/images/organize.svg" alt="ASP.NET" class="img-responsive about-svg" />
+    </div>
+    <div class="col-sm-5">
         <h4>Organized by topic</h4>
         <p>
-            To keep things organized, questions are 
+            To keep things organized, questions are
             grouped by topic. Want to change what topic
             a question is for? That's okay! Update the
             topic for a question at any time.
         </p>
-    </div>  
+    </div>
 </div>
