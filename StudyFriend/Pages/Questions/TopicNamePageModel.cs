@@ -1,8 +1,10 @@
-﻿using StudyFriend.Models;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
+using Microsoft.AspNetCore.Identity;
+using StudyFriend.Models;
+using System.Security.Claims;
 
 namespace StudyFriend.Pages.Questions
 {
@@ -13,12 +15,13 @@ namespace StudyFriend.Pages.Questions
         public void PopulateTopicsDropDownList(StudyFriendContext _context,
             object selectedTopic = null)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var topicsQuery = from t in _context.Topic
+                              where t.UserId == userId
                               orderby t.Name
-                              select t;
-
+                              select t;            
             TopicNameSL = new SelectList(topicsQuery.AsNoTracking(),
-                "ID", "Name", selectedTopic);
+                "TopicID", "Name", selectedTopic);
         }
     }
 }
