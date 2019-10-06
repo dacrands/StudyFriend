@@ -5,6 +5,7 @@ body {
     padding-bottom: 20px;
 }
 
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -23,6 +24,11 @@ body {
     width: 100%;
 }
 
+/* Increase font-size for mobile */
+.form-control {
+    font-size: 16px;
+}
+
 .about-svg {
     max-width: 350px;
     align-self: center;
@@ -38,15 +44,7 @@ body {
 }
 
 
-.blue-gradient {
-    background: #56CCF2; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: aliceblue;
-}
-
-
-/*Flex Helper*/
+/* Flex Helper */
 .flex-center {    
     display: flex;
     flex-direction: column;
@@ -54,6 +52,13 @@ body {
     align-content: center;
 }
 
+/* Gradient used for Jumbotron */
+.blue-gradient {
+    background: #56CCF2; 
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
+    background: linear-gradient(to right, #2F80ED, #56CCF2);
+    color: aliceblue;
+}
 
 /* QR code generator */
 #qrCode {
