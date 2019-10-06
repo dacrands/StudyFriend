@@ -16,7 +16,7 @@
     @foreach (var item in Model.Question)
     {
         <div class="col-md-6 mb-4">
-            <div class="card p-2 text-center">
+            <div class="card p-3 pb-0 text-center">
                 <div>
                     <a asp-page="../Topics/Details" asp-route-id="@item.Topic.TopicID">
                         @Html.DisplayFor(modelItem => item.Topic.Name)
@@ -28,10 +28,10 @@
                     </a>
                 </h3>
                 <hr />
-                <p class="small">
+                <div class="small mt-0">
                     <a asp-page="./Edit" asp-route-id="@item.QuestionID">Edit</a> |
                     <a asp-page="./Delete" asp-route-id="@item.QuestionID">Delete</a>
-                </p>
+                </div>
             </div>
         </div>
     }
