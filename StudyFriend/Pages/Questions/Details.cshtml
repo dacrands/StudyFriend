@@ -20,7 +20,7 @@
         @{
             foreach (var answer in Model.Question.Answers)
             {                  
-                <a class="card p-2 mb-2 text-dark" 
+                <a class="card p-2 mb-3 text-dark" 
                     asp-page="../Answers/Edit" 
                     asp-route-id="@answer.AnswerID"
                 >

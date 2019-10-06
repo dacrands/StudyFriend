@@ -15,7 +15,7 @@
             foreach (var question in Model.Topic.Questions)
             {
 
-                <a class="card p-2 mb-2" asp-page="../Questions/Details"
+                <a class="card p-2 mb-3 text-dark" asp-page="../Questions/Details"
                    asp-route-id="@question.QuestionID">
                     @question.Body
                 </a>
