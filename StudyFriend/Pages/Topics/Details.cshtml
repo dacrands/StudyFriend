@@ -15,7 +15,7 @@
             foreach (var question in Model.Topic.Questions)
             {
 
-                <a class="list-group-item" asp-page="../Questions/Details"
+                <a class="card p-2 mb-2" asp-page="../Questions/Details"
                    asp-route-id="@question.QuestionID">
                     @question.Body
                 </a>
@@ -25,6 +25,5 @@
     </div>
 </div>
 <div>
-
     <a asp-page="./Index">Back to Topics</a>
 </div>

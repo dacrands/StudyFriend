@@ -16,19 +16,19 @@
     @foreach (var item in Model.Question)
     {
         <div class="col-md-6">
-            <div class="thumbnail text-center">
+            <div class="card mt-2 p-2 text-center">
                 <div>
                     <a asp-page="../Topics/Details" asp-route-id="@item.Topic.TopicID">
                         @Html.DisplayFor(modelItem => item.Topic.Name)
                     </a>
                 </div>
-                <h3>
+                <h3 class="mt-2 mb-2">
                     <a asp-page="./Details" asp-route-id="@item.QuestionID">
                         @Html.DisplayFor(modelItem => item.Body)
                     </a>
                 </h3>
                 <hr />
-                <p>
+                <p class="small">
                     <a asp-page="./Edit" asp-route-id="@item.QuestionID">Edit</a> |
                     <a asp-page="./Delete" asp-route-id="@item.QuestionID">Delete</a>
                 </p>
