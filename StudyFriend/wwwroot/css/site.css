@@ -1,7 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
-body {
-    padding-top: 50px;
+body {    
+    padding-top: 80px;
     padding-bottom: 20px;
 }
 
@@ -34,23 +34,6 @@ body {
     align-self: center;
 }
 
-/* Bootstrap style spacing helpers*/
-.mt-lg {    
-    margin-top: 80px;
-}
-
-.mt-md {
-    margin-top: 30px;
-}
-
-
-/* Flex Helper */
-.flex-center {    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
 
 /* Gradient used for Jumbotron */
 .blue-gradient {
