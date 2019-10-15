@@ -11,17 +11,22 @@
     <nav id="cookieConsent" class="navbar navbar-default navbar-fixed-top" role="alert">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cookieConsent .navbar-collapse">
-                    <span class="sr-only">Toggle cookie consent banner</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <button type="button"
+                        class="navbar-toggle btn btn-outline-info p-0"
+                        data-toggle="collapse"
+                        data-target="#cookieConsent .navbar-collapse"
+                        aria-controls="cookieConsent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="p-sm-2">
+                        i
+                    </span>
                 </button>
-                <span class="navbar-brand"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></span>
             </div>
             <div class="collapse navbar-collapse">
                 <p class="navbar-text">
-                    Use this space to summarize your privacy and cookie use policy.
+                    This site uses cookies.
+                    For more information, please review our privacy-policy.
                 </p>
                 <div class="navbar-right">
                     <a asp-page="/Privacy" class="btn btn-info navbar-btn">Learn More</a>
