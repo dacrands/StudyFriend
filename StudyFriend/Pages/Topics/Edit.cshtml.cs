@@ -4,16 +4,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using StudyFriend.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace StudyFriend.Pages.Topics
 {
     public class EditModel : PageModel
     {
         private readonly StudyFriendContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public EditModel(StudyFriendContext context)
+        public EditModel(StudyFriendContext context,
+            UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [BindProperty]
@@ -42,6 +46,8 @@ namespace StudyFriend.Pages.Topics
                 return Page();
             }
 
+            var currUser = await _userManager.GetUserAsync(User);
+            Topic.UserId = currUser.Id;
             _context.Attach(Topic).State = EntityState.Modified;
 
             try
