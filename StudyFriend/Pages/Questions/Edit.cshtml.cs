@@ -43,6 +43,7 @@ namespace StudyFriend.Pages.Questions
         {
             if (!ModelState.IsValid)
             {
+                PopulateTopicsDropDownList(_context, Question.TopicID);
                 return Page();
             }
 
