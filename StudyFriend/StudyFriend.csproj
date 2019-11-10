@@ -5,12 +5,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20191027221614_AnswerDataAnnotations.cs" />
+    <Compile Remove="Migrations\20191027221614_AnswerDataAnnotations.Designer.cs" />
+    <Compile Remove="Migrations\20191109022053_AnswerBodyValidation.cs" />
+    <Compile Remove="Migrations\20191109022053_AnswerBodyValidation.Designer.cs" />
+    <Compile Remove="Migrations\20191109022926_AnswerBodyValidation.cs" />
+    <Compile Remove="Migrations\20191109022926_AnswerBodyValidation.Designer.cs" />
+    <Compile Remove="Migrations\20191109023812_AnswerBodyValidation.cs" />
+    <Compile Remove="Migrations\20191109023812_AnswerBodyValidation.Designer.cs" />
+    <Compile Remove="Migrations\20191109031200_AnswerBodyValidation.cs" />
+    <Compile Remove="Migrations\20191109031200_AnswerBodyValidation.Designer.cs" />
+    <Compile Remove="Migrations\20191109230205_AnswerBodyValidation.cs" />
+    <Compile Remove="Migrations\20191109230205_AnswerBodyValidation.Designer.cs" />
+    <Compile Remove="Migrations\20191110010632_AnswerValidation.cs" />
+    <Compile Remove="Migrations\20191110010632_AnswerValidation.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="3.0.415" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4twitter-bootstrap_4css_4bootstrap_1css_1map__JsonSchema="" wwwroot_4twitter-bootstrap_4css_4bootstrap_1min_1css_1map__JsonSchema="" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4twitter-bootstrap_4css_4bootstrap_1min_1css_1map__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

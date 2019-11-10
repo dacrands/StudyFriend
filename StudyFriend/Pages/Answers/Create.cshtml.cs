@@ -32,6 +32,7 @@ namespace StudyFriend.Pages.Answers
         {
             if (!ModelState.IsValid)
             {
+                PopulateQuestionsDropDownList(_context);
                 return Page();
             }
 

@@ -38,8 +38,12 @@ namespace StudyFriend.Pages.Answers
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
+            Answer = await _context.Answer
+               .Include(a => a.Question).FirstOrDefaultAsync(m => m.AnswerID == id);
+
             if (!ModelState.IsValid)
             {
+                PopulateQuestionsDropDownList(_context, Answer.QuestionID);
                 return Page();
             }
 
