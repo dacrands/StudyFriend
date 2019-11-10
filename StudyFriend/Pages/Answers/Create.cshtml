@@ -34,7 +34,7 @@
 </div>
 
 <div>
-    <a asp-page="../Questions/Details" asp-route-id="Answer.QuestionID">Back to Question</a> |
+    <a asp-page="../Questions/Details" asp-route-id="@Request.Query["questionId"]">Back to Question</a>
 </div>
 
 @section Scripts {
