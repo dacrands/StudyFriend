@@ -27,10 +27,11 @@ namespace StudyFriend.Pages.Questions
         [BindProperty]
         public Question Question { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? topicId)
         {
             if (!ModelState.IsValid)
             {
+                PopulateTopicsDropDownList(_context, topicId);
                 return Page();
             }
 
