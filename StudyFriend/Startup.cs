@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using StudyFriend.Models;
@@ -33,21 +33,20 @@ namespace StudyFriend
                 .AddRoles<Microsoft.AspNetCore.Identity.IdentityRole>()
                 .AddEntityFrameworkStores<StudyFriendContext>();
 
-            services.AddMvc()
+            services.AddRazorPages()
                 .AddRazorPagesOptions(options =>
                 {
                     options.Conventions.AuthorizeFolder("/Topics");
                     options.Conventions.AuthorizeFolder("/Questions");
                     options.Conventions.AuthorizeFolder("/Answers");
-                }
-                ).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                });
 
             services.AddDbContext<StudyFriendContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("StudyFriendContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -59,11 +58,18 @@ namespace StudyFriend
                 app.UseHsts();
             }
 
-            app.UseAuthentication();
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
-            app.UseMvc();
+
+            app.UseRouting();
+            app.UseCookiePolicy();            
+            app.UseHttpsRedirection();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints => {
+                endpoints.MapRazorPages();
+            });
         }
     }
 }
