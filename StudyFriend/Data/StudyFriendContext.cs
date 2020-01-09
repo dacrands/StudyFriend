@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using StudyFriend.Models;
 
-namespace StudyFriend.Models
+namespace StudyFriend.Data
 {
     public class StudyFriendContext : IdentityDbContext<ApplicationUser>
     {
