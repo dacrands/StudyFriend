@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using StudyFriend.Models;
+using StudyFriend.Data;
 
 namespace StudyFriend
 {

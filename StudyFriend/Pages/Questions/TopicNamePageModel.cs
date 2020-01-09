@@ -2,8 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using StudyFriend.Models;
+using StudyFriend.Data;
 using System.Security.Claims;
 
 namespace StudyFriend.Pages.Questions

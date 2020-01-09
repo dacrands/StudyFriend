@@ -1,4 +1,6 @@
-﻿namespace StudyFriend.Models
+﻿using StudyFriend.Models;
+
+namespace StudyFriend.Data
 {
     public static class DbInitializer
     {

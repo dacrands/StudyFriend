@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using StudyFriend.Data;
 using StudyFriend.Models;
 
 namespace StudyFriend.Pages.Answers

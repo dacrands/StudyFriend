@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StudyFriend.Models;
+using StudyFriend.Data;
 using Microsoft.AspNetCore.Identity;
 
 namespace StudyFriend.Pages.Topics
