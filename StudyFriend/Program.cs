@@ -4,13 +4,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using StudyFriend.Data;
-
+using Microsoft.AspNetCore.Identity;
+using StudyFriend.Models;
 
 namespace StudyFriend
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async System.Threading.Tasks.Task Main(string[] args)
         {
             var host = CreateWebHostBuilder(args).Build();
 
@@ -20,8 +21,9 @@ namespace StudyFriend
 
                 try
                 {
+                    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();                    
                     var context = services.GetRequiredService<StudyFriendContext>();
-                    DbInitializer.Initialize(context);
+                    await DbInitializer.InitializeAsync(context, userManager);
                 }
                 catch (Exception ex)
                 {
