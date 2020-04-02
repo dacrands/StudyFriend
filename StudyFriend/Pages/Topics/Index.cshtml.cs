@@ -28,10 +28,8 @@ namespace StudyFriend.Pages.Topics
         {
             var currUser = await _userManager.GetUserAsync(User);
             var topics = from t in _context.Topic
-                         select t;
-            topics = topics
-                        .Where(t => t.UserId == currUser.Id)
-                        .OrderBy(t => t.Name);
+                         where t.UserId == currUser.Id
+                         select t;           
             Topic = await topics.ToListAsync();
         }
     }
