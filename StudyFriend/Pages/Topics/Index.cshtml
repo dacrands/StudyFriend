@@ -6,10 +6,16 @@
 }
 
 
-    <h2>Topics</h2>    
-    <a asp-page="Create">Add a new topic</a>
-    <hr />
+<h2>Topics</h2>    
+<a asp-page="Create">Add a new topic</a>
+<hr />
 
+<form class="form-inline">
+    <p>
+        Topic: <input type="search" asp-for="SearchString" class="form-control mb-2"/>
+               <button type="submit" class="btn btn-primary mb-2">Filter</button>
+    </p>
+</form>
 
 
 <section class="row">
