@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DB1A1E6D-B83
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{195AB4B4-D819-400B-A054-1887699D9C20}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyFriend", "src\StudyFriend\StudyFriend.csproj", "{BEC63FAB-7CC2-4655-8637-5F0771300F79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyJourney", "src\StudyJourney\StudyJourney.csproj", "{BEC63FAB-7CC2-4655-8637-5F0771300F79}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyFriendTests", "tests\StudyFriendTests\StudyFriendTests.csproj", "{FBDBC4B7-39CC-4D3F-B66F-F73057893256}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyJourneyTests", "tests\StudyJourneyTests\StudyJourneyTests.csproj", "{FBDBC4B7-39CC-4D3F-B66F-F73057893256}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

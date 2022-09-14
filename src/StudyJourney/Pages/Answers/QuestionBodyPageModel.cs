@@ -1,0 +1,32 @@
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+<<<<<<<< HEAD:src/StudyFriend/Pages/Answers/QuestionBodyPageModel.cs
+using StudyFriend.Data;
+========
+using StudyJourney.Data;
+>>>>>>>> develop:src/StudyJourney/Pages/Answers/QuestionBodyPageModel.cs
+using System.Linq;
+using System.Security.Claims;
+
+namespace StudyJourney.Pages.Answers
+{
+    public class QuestionBodyPageModel : PageModel
+    {
+        public SelectList QuestionBodySL { get; set; }
+
+        public void PopulateQuestionsDropDownList(StudyFriendContext _context,
+            object selectedQuestion = null)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var questionsQuery = from q in _context.Question
+                                 join t in _context.Topic
+                                 on q.TopicID equals t.TopicID
+                                 where t.UserId == userId
+                                 select q;
+
+            QuestionBodySL = new SelectList(questionsQuery.AsNoTracking(),
+                "QuestionID", "Body", selectedQuestion);
+        }
+    }
+}

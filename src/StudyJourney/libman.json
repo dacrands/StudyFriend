@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "twitter-bootstrap@4.3.1",
+      "destination": "wwwroot/twitter-bootstrap/",
+      "files": [        
+        "css/bootstrap-grid.min.css",
+        "css/bootstrap-grid.min.css.map",        
+        "css/bootstrap-reboot.min.css",
+        "css/bootstrap-reboot.min.css.map",        
+        "css/bootstrap.min.css",
+        "css/bootstrap.min.css.map",      
+        "js/bootstrap.bundle.min.js",
+        "js/bootstrap.bundle.min.js.map",        
+        "js/bootstrap.min.js",
+        "js/bootstrap.min.js.map"
+      ]
+    }
+  ]
+}

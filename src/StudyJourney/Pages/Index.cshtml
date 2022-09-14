@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="jumbotron blue-gradient mt-md">
+        <h1>Study Friend</h1>
+        <hr />
+        <p class="lead"> Study by asking yourself questions, then explaining the answer.</p>
+    </div>
+
+    <section class="row">
+        <div class="col-md-6 mb-4">
+            <a asp-page="/Topics/Index" class="card text-center p-2" style="text-decoration: none;">
+                <h3>Topics</h3>
+            </a>
+        </div><div class="col-md-6 mb-4">
+            <a asp-page="/Questions/Index" class="card text-center p-2" style="text-decoration: none;">
+                <h3>Questions</h3>
+            </a>
+        </div>
+    </section>
