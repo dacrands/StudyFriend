@@ -340,5 +340,5 @@ ASALocalRun/
 healthchecksdb
 
 # Coverage
-/StudyFriendTests/results
-/StudyFriendTests/coverage.opencover.xml
+/StudyJourneyTests/results
+/StudyJourneyTests/coverage.opencover.xml

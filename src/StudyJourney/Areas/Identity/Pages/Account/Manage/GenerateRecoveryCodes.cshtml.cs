@@ -2,11 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-<<<<<<<< HEAD:src/StudyFriend/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml.cs
-using StudyFriend.Models;
-========
+
 using StudyJourney.Models;
->>>>>>>> develop:src/StudyJourney/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml.cs
 using System;
 using System.Linq;
 using System.Threading.Tasks;

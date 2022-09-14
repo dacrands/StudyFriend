@@ -2,11 +2,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-<<<<<<<< HEAD:src/StudyFriend/Areas/Identity/Pages/Account/ConfirmEmail.cshtml.cs
-using StudyFriend.Models;
-========
+
 using StudyJourney.Models;
->>>>>>>> develop:src/StudyJourney/Areas/Identity/Pages/Account/ConfirmEmail.cshtml.cs
 using System;
 using System.Threading.Tasks;
 

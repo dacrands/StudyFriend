@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-<<<<<<<< HEAD:src/StudyFriend/Pages/Answers/QuestionBodyPageModel.cs
-using StudyFriend.Data;
-========
+
 using StudyJourney.Data;
->>>>>>>> develop:src/StudyJourney/Pages/Answers/QuestionBodyPageModel.cs
 using System.Linq;
 using System.Security.Claims;
 

@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-<<<<<<<< HEAD:src/StudyFriend/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml.cs
-using StudyFriend.Models;
-========
+
 using StudyJourney.Models;
->>>>>>>> develop:src/StudyJourney/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml.cs
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 

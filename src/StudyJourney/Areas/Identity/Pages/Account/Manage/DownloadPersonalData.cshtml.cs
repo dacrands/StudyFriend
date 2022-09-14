@@ -3,11 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-<<<<<<<< HEAD:src/StudyFriend/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml.cs
-using StudyFriend.Models;
-========
+
 using StudyJourney.Models;
->>>>>>>> develop:src/StudyJourney/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml.cs
 using System;
 using System.Collections.Generic;
 using System.Linq;

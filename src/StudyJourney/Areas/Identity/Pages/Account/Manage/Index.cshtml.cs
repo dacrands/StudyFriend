@@ -2,11 +2,8 @@
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-<<<<<<<< HEAD:src/StudyFriend/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs
-using StudyFriend.Models;
-========
+
 using StudyJourney.Models;
->>>>>>>> develop:src/StudyJourney/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;

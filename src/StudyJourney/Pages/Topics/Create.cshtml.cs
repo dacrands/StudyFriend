@@ -1,13 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-<<<<<<<< HEAD:src/StudyFriend/Pages/Topics/Create.cshtml.cs
-using StudyFriend.Data;
-using StudyFriend.Models;
-========
+
 using StudyJourney.Data;
 using StudyJourney.Models;
->>>>>>>> develop:src/StudyJourney/Pages/Topics/Create.cshtml.cs
 using System.Threading.Tasks;
 
 namespace StudyJourney.Pages.Topics

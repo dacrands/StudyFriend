@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-<<<<<<<< HEAD:src/StudyFriend/Pages/Questions/Edit.cshtml.cs
-using StudyFriend.Data;
-using StudyFriend.Models;
-========
+
 using StudyJourney.Data;
 using StudyJourney.Models;
->>>>>>>> develop:src/StudyJourney/Pages/Questions/Edit.cshtml.cs
 using System.Linq;
 using System.Threading.Tasks;
 

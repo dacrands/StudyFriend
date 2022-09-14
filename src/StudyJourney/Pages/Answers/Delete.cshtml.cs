@@ -1,13 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-<<<<<<<< HEAD:src/StudyFriend/Pages/Answers/Delete.cshtml.cs
-using StudyFriend.Data;
-using StudyFriend.Models;
-========
+
 using StudyJourney.Data;
 using StudyJourney.Models;
->>>>>>>> develop:src/StudyJourney/Pages/Answers/Delete.cshtml.cs
 using System.Threading.Tasks;
 
 namespace StudyJourney.Pages.Answers

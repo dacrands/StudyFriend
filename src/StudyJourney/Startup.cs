@@ -5,13 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-<<<<<<<< HEAD:src/StudyFriend/Startup.cs
-using StudyFriend.Data;
-using StudyFriend.Models;
-========
 using StudyJourney.Data;
 using StudyJourney.Models;
->>>>>>>> develop:src/StudyJourney/Startup.cs
 
 namespace StudyJourney
 {

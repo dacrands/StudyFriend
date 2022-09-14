@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-<<<<<<<< HEAD:src/StudyFriend/Pages/Questions/Create.cshtml.cs
-using StudyFriend.Data;
-using StudyFriend.Models;
-========
+
 using StudyJourney.Data;
 using StudyJourney.Models;
->>>>>>>> develop:src/StudyJourney/Pages/Questions/Create.cshtml.cs
 using System.Threading.Tasks;
 
 namespace StudyJourney.Pages.Questions
