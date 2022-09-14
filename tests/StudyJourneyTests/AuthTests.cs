@@ -11,7 +11,7 @@ using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace StudyFriendTests
+namespace StudyJourneyTests
 {
     public class AuthTests
     : IClassFixture<WebApplicationFactory<StudyJourney.Startup>>

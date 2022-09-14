@@ -1,14 +1,9 @@
-<<<<<<<< HEAD:tests/StudyFriendTests/DataTests.cs
-﻿using StudyFriend.Data;
-using StudyFriend.Models;
-========
 ﻿using StudyJourney.Data;
 using StudyJourney.Models;
->>>>>>>> develop:tests/StudyJourneyTests/DataTests.cs
 using System.Linq;
 using Xunit;
 
-namespace StudyFriendTests
+namespace StudyJourneyTests
 {
     public class DataTests
     {

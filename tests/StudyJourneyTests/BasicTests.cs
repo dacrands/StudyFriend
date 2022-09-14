@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace StudyFriendTests
+namespace StudyJourneyTests
 {
     public class BasicTests
     : IClassFixture<WebApplicationFactory<StudyJourney.Startup>>

@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using StudyJourney.Data;
 
 
-namespace StudyFriendTests
+namespace StudyJourneyTests
 {
     class Utilities
     {
