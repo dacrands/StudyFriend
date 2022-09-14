@@ -1,20 +1,20 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/StudyJourney/StudyJourney.csproj", "src/StudyJourney/"]
-RUN dotnet restore "src/StudyJourney/StudyJourney.csproj"
-COPY . .
-WORKDIR "/src/src/StudyJourney"
-RUN dotnet build "StudyJourney.csproj" -c Release -o /app/build
+COPY . ./
+RUN dotnet restore 
+
+RUN dotnet build --no-restore -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "StudyJourney.csproj" -c Release -o /app/publish
+RUN dotnet publish --no-restore -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "StudyJourney.dll"]
+COPY --from=publish /app .
+
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet StudyJourney.dll
+
+ 
