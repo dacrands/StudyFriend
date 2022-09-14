@@ -1,0 +1,37 @@
+﻿@page
+@model StudyJourney.Pages.Questions.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <h3>
+        <small class=text-muted>@Html.DisplayFor(model => model.Question.Topic.Name)</small>
+        <br />
+        @Html.DisplayFor(model => model.Question.Body)
+    </h3>
+        <a  asp-page="../Answers/Create" asp-route-questionId="@Model.Question.QuestionID">Add an Answer</a> |
+        <a asp-page="./Edit" asp-route-id="@Model.Question.QuestionID">Edit this Question</a>
+
+<hr />
+
+<div>
+    <div class="list-group">
+        @{
+            foreach (var answer in Model.Question.Answers)
+            {                  
+                <a class="card p-2 mb-3 text-dark" 
+                    asp-page="../Answers/Edit" 
+                    asp-route-id="@answer.AnswerID"
+                >
+                    @answer.Body
+                </a>                
+            }
+        }
+
+    </div>
+</div>
+<div>
+    <a asp-page="../Topics/Details" asp-route-id="@Model.Question.TopicID">Back to @Model.Question.Topic.Name Questions</a>
+
+</div>

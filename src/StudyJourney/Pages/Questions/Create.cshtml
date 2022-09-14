@@ -1,0 +1,42 @@
+﻿@page
+@model StudyJourney.Pages.Questions.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+    <h2>Ask a new question</h2>
+    
+<hr />
+<div class="row">
+    <div class="col-lg-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Question.Topic" class="control-label"></label>
+                <select asp-for="Question.TopicID" class="form-control"
+                        asp-items="@Model.TopicNameSL">
+                    <option value="">-- Select Topic --</option>
+                </select>
+                <span asp-validation-for="Question.TopicID" class="text-danger" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Question.Body" class="control-label"></label>
+                <input asp-for="Question.Body" class="form-control" />
+                <span asp-validation-for="Question.Body" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
