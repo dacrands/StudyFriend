@@ -15,11 +15,8 @@ namespace StudyJourney
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration, IWebHostEnvironment env)
+        public Startup(IConfiguration configuration)
         {
-            configuration = new ConfigurationBuilder().SetBasePath(env.ContentRootPath)
-                                                      .AddJsonFile("Secrets.json")
-                                                      .Build();
             Configuration = configuration;
         }
 
