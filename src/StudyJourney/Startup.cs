@@ -26,7 +26,6 @@ namespace StudyJourney
         {
             services.Configure<CookiePolicyOptions>(options =>
             {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
@@ -34,7 +33,6 @@ namespace StudyJourney
             services.AddDbContext<StudyJourneyDbContext>(options =>
               options.UseSqlServer(
                   Configuration.GetConnectionString("SqlServerConnection")));
-
 
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
