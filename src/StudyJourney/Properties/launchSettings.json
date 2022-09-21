@@ -8,13 +8,22 @@
     }
   },
   "profiles": {
-    "StudyJourney": {
-      "commandName": "Project",
+    "IIS - Dev": {
+      "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+      "ancmHostingModel": "InProcess",
+      "applicationUrl": "https://localhost:5000"
+    },
+    "StudyJourney": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      },
+      "applicationUrl": "https://localhost:5000"
     },
     "Docker": {
       "commandName": "Docker",
